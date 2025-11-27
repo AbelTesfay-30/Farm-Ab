@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farm Management - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Smart Farm</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-menu">
+                <a href="#" class="sidebar-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-tint"></i>
+                    <span>Irrigation</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-seedling"></i>
+                    <span>Crops</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-main">
+            <div class="dashboard-header">
+                <h1>Farm Overview</h1>
+                <p>Real-time monitoring and analytics</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #e8f5e9;">
+                        <i class="fas fa-tint" style="color: #2e7d32;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Soil Moisture</h3>
+                        <p class="stat-value">68%</p>
+                        <span class="stat-label">Optimal Level</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #fff3e0;">
+                        <i class="fas fa-thermometer-half" style="color: #ef6c00;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Temperature</h3>
+                        <p class="stat-value">24°C</p>
+                        <span class="stat-label">Current</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #e3f2fd;">
+                        <i class="fas fa-cloud" style="color: #1565c0;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Humidity</h3>
+                        <p class="stat-value">72%</p>
+                        <span class="stat-label">Moderate</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #f3e5f5;">
+                        <i class="fas fa-seedling" style="color: #6a1b9a;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Crop Health</h3>
+                        <p class="stat-value">92%</p>
+                        <span class="stat-label">Excellent</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Water Usage Analytics</h3>
+                    <canvas id="waterChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Crop Growth Progress</h3>
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Sensor Status -->
+            <div class="sensor-section">
+                <h2>Sensor Status</h2>
+                <div class="sensor-grid">
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <h4>Field A - Sensor 1</h4>
+                            <span class="status-badge active">Active</span>
+                        </div>
+                        <div class="sensor-data">
+                            <div class="sensor-item">
+                                <span>Moisture:</span>
+                                <strong>65%</strong>
+                            </div>
+                            <div class="sensor-item">
+                                <span>Temperature:</span>
+                                <strong>23°C</strong>
+                            </div>
+                            <div class="sensor-item">
+                                <span>pH Level:</span>
+                                <strong>6.8</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <h4>Field B - Sensor 2</h4>
+                            <span class="status-badge active">Active</span>
+                        </div>
+                        <div class="sensor-data">
+                            <div class="sensor-item">
+                                <span>Moisture:</span>
+                                <strong>71%</strong>
+                            </div>
+                            <div class="sensor-item">
+                                <span>Temperature:</span>
+                                <strong>25°C</strong>
+                            </div>
+                            <div class="sensor-item">
+                                <span>pH Level:</span>
+                                <strong>7.2</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <h4>Greenhouse - Sensor 3</h4>
+                            <span class="status-badge warning">Warning</span>
+                        </div>
+                        <div class="sensor-data">
+                            <div class="sensor-item">
+                                <span>Moisture:</span>
+                                <strong>45%</strong>
+                            </div>
+                            <div class="sensor-item">
+                                <span>Temperature:</span>
+                                <strong>28°C</strong>
+                            </div>
+                            <div class="sensor-item">
+                                <span>pH Level:</span>
+                                <strong>6.5</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sensor-card">
+                        <div class="sensor-header">
+                            <h4>Field C - Sensor 4</h4>
+                            <span class="status-badge active">Active</span>
+                        </div>
+                        <div class="sensor-data">
+                            <div class="sensor-item">
+                                <span>Moisture:</span>
+                                <strong>68%</strong>
+                            </div>
+                            <div class="sensor-item">
+                                <span>Temperature:</span>
+                                <strong>24°C</strong>
+                            </div>
+                            <div class="sensor-item">
+                                <span>pH Level:</span>
+                                <strong>7.0</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
